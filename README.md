@@ -43,13 +43,6 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=TarasTrach&bg_color=0d1117&color=c9d1d9&title_color=60a5fa&line=3b82f6&point=93c5fd&area=true&area_color=3b82f6&hide_border=true&custom_title=Contributions" />
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=TarasTrach&bg_color=ffffff&color=24292f&title_color=1d4ed8&line=2563eb&point=1d4ed8&area=true&area_color=93c5fd&hide_border=true&custom_title=Contributions" alt="Contribution activity graph" width="100%" />
-</picture>
-
-<br/>
-
-<picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=TarasTrach&theme=tokyonight&hide_border=true&ring=3b82f6&fire=7c3aed&currStreakLabel=60a5fa" />
   <img src="https://streak-stats.demolab.com?user=TarasTrach&theme=default&hide_border=true&ring=2563eb&fire=7c3aed&currStreakLabel=1d4ed8" alt="Contribution streak" />
 </picture>
