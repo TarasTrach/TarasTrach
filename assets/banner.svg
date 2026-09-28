@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="854" height="230" viewBox="0 0 854 230" role="img" aria-label="Taras Trach — Backend Engineer">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1e3a8a"/><stop offset=".5" stop-color="#2563eb"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs>
+<style>.w{animation:drift 9s ease-in-out infinite alternate}@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-60px)}}@media (prefers-reduced-motion:reduce){.w{animation:none}}</style>
+<path class="w" fill="url(#g)" opacity=".3" d="M0 0H914V184C800 214 680 166 560 182C440 198 320 222 210 204C130 191 60 182 0 192Z"/>
+<path fill="url(#g)" d="M0 0H854V168C760 200 640 140 520 158C400 176 300 206 180 186C110 174 50 160 0 172Z"/>
+<text x="427" y="104" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="64" font-weight="800" fill="#fff">Taras Trach</text>
+<text x="427" y="142" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="22" font-weight="600" fill="#fff" fill-opacity=".92">Backend Engineer · Node.js / NestJS / TypeScript</text>
+</svg>
