@@ -1,0 +1,45 @@
+name: Profile stats
+
+# Redraws assets/stats.svg once a day from GitHub's own API.
+# Uses only the built-in GITHUB_TOKEN. If a run fails, the previous card stays as is.
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/stats.mjs"
+      - ".github/workflows/stats.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-stats
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Render stats card
+        run: node scripts/stats.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GH_LOGIN: ${{ github.repository_owner }}
+
+      - name: Commit if changed
+        run: |
+          git add assets/stats.svg
+          if git diff --cached --quiet; then
+            echo "Stats unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: refresh stats card"
+          git push
