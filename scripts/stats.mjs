@@ -116,7 +116,7 @@ function render(s) {
     .map(([value, label], i) => {
       const x = 32 + (i % 2) * 182;
       const y = 112 + Math.floor(i / 2) * 82;
-      return `<g class="m" style="animation-delay:${i * 90}ms"><text x="${x}" y="${y}" class="v">${esc(value)}</text><text x="${x}" y="${y + 22}" class="l">${esc(label)}</text></g>`;
+      return `<g class="m"><text x="${x}" y="${y}" class="v">${esc(value)}</text><text x="${x}" y="${y + 22}" class="l">${esc(label)}</text></g>`;
     })
     .join('');
 
@@ -134,7 +134,7 @@ function render(s) {
       const cx = (x + bw / 2).toFixed(1);
       const label = MONTHS[Number(m.key.slice(5, 7)) - 1];
       const value = m.total > 0 ? `<text x="${cx}" y="${base - h - 7}" class="n">${m.total}</text>` : '';
-      return `<g class="b" style="animation-delay:${280 + i * 55}ms"><rect x="${x.toFixed(1)}" y="${base - h}" width="${bw.toFixed(1)}" height="${h}" rx="4" fill="url(#bar)"/>${value}</g><text x="${cx}" y="${base + 22}" class="mo">${label}</text>`;
+      return `<g class="b"><rect x="${x.toFixed(1)}" y="${base - h}" width="${bw.toFixed(1)}" height="${h}" rx="4" fill="url(#bar)"/>${value}</g><text x="${cx}" y="${base + 22}" class="mo">${label}</text>`;
     })
     .join('');
 
@@ -158,15 +158,13 @@ text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,san
 .l{font-size:12px;fill:#94a3b8}
 .n{font-size:10px;font-weight:600;fill:#cbd5e1;text-anchor:middle}
 .mo{font-size:11px;fill:#64748b;text-anchor:middle}
-.m{animation:fade .6s ease-out both}
-.b{transform-box:fill-box;transform-origin:50% 100%;animation:grow .8s cubic-bezier(.2,.8,.2,1) both}
-@keyframes fade{from{opacity:0}}
-@keyframes grow{from{transform:scaleY(0)}}
-@media (prefers-reduced-motion:reduce){.m,.b{animation:none}}
+.g{animation:pulse 6s ease-in-out infinite alternate}
+@keyframes pulse{from{opacity:.6}}
+@media (prefers-reduced-motion:reduce){.g{animation:none}}
 </style>
 <g clip-path="url(#card)">
 <rect width="840" height="250" fill="url(#bg)"/>
-<circle cx="760" cy="20" r="190" fill="url(#glow)"/>
+<circle class="g" cx="760" cy="20" r="190" fill="url(#glow)"/>
 </g>
 <rect x=".5" y=".5" width="839" height="249" rx="15.5" fill="none" stroke="#94a3b8" stroke-opacity=".18"/>
 <text x="32" y="44" class="t">GITHUB ACTIVITY</text>
